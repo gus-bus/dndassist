@@ -1,0 +1,7 @@
+2021-02-13
+Gold Problem
+- The JS script is placed at the end of index.html; it will run after the html has been loaded
+- Default is for the stats to be loaded in the Character display windows
+- The HTML element containing the Gold values are contained under equipment and will only be loaded when the equipment button is clicked
+- Not able to simply assign 
+https://stackoverflow.com/questions/14028959/why-does-jquery-or-a-dom-method-such-as-getelementbyid-not-find-the-element

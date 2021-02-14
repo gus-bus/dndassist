@@ -23,51 +23,141 @@
                     <li><a id="showequipment">Equipment</a></li>
                     <li><a id="showskills">Skills</a></li>
                     <li><a id="showabilities">Abilities</a></li>
+                    <li><a id="showspells">Spells</a></li>
                 </ul>
             </nav>
         </div>
     </div>    
 
     <section class="cards">
-        <div class="container grid">
+        <div id="cardsWhole" class="container grid">
             <div class="char sorc">
                 <h1>Astrid</h1>
                 <img id="sorc" src="images/sorcnorm.png" alt="">
+
+                <div class="charInfo">
+                    <div id="sorcAbilityInfo" class="class-ability">
+                        <img id="sorcIcon" src="images/sorc-on.png" class = icon alt="">
+                        <img id="sorcIcon1" src="images/sorc-on.png" class = icon alt="">
+                        <img id="sorcIcon2" src="images/sorc-on.png" class = icon alt="">
+                        <img id="sorcIcon3" src="images/sorc-on.png" class = icon alt="">
+                        <img id="sorcIcon4" src="images/sorc-on.png" class = icon alt="">
+                    </div>
+
+                    <div id = "sorcGoldInfo" class="goldInfo">
+                        <p id="sorcGoldOut">Gold: 203</p>
+                        <a id="sorcAddGold" class="btninc">+</a>
+                        <a id="sorcSubtractGold" class="btndec">-</a>
+                    </div>
+                </div>
+
                 <div id="sorcdisplay" class="activewindow"></div>
             </div>
 
-            <div class="char rogue">
+            <div id="rogueWhole" class="char rogue">
                 <h1>Makaria</h1>
                 <img id="rogue" src="images/roguenorm.png" alt="">
+
+                <div class="charInfo">
+                    <div id="rogueAbilityInfo" class="class-ability">
+                        <img id="rogueIcon" src="images/rogue-on.png" class="iconLarger" alt="">
+                    </div>
+
+                    <div id = "rogueGoldInfo" class="goldInfo">
+                        <p id="rogueGoldOut">Gold: 208</p>
+                        <a id="rogueAddGold" class="btninc">+</a>
+                        <a id="rogueSubtractGold" class="btndec">-</a>
+                    </div>
+                </div>
+
                 <div id="roguedisplay" class="activewindow"></div>
             </div>
 
             <div class="char cleric">
                 <h1>Ovrin</h1>
                 <img id="cleric" src="images/clericnorm.png" alt="">
+
+                <div class="charInfo">
+                    <div id="clericAbilityInfo" class="class-ability">
+                        <img id="clericIcon" src="images/cleric-on.png" class="iconLarger" alt="">
+                    </div>
+
+                    <div id = "clericGoldInfo" class="goldInfo">
+                        <p id="clericGoldOut">Gold: 286</p>
+                        <a id="clericAddGold" class="btninc">+</a>
+                        <a id="clericSubtractGold" class="btndec">-</a>
+                    </div>
+                </div>
+
                 <div id="clericdisplay" class="activewindow"></div>
             </div>
 
-            <div class="char barb">
+            <div id="barbWhole" class="char barb">
                 <h1>Regar</h1>
-                <img id="barb" src="images/barbnorm.png" alt="">
+                <img id="barb" src="images/barbnorm.png" alt=""> 
+                
+                <div class="charInfo">
+                    <div id="barbAbilityInfo" class="class-ability">
+                        <img id="barbIcon" src="images/barb-on.png" class="icon" alt="">
+                        <img id="barbIcon1" src="images/barb-on.png" class="icon" alt="">
+                        <img id="barbIcon2" src="images/barb-on.png" class="icon" alt="">
+                    </div>
+
+                    <div id = "barbGoldInfo" class="goldInfo">
+                        <p id="barbGoldOut">Gold: 160</p>
+                        <a id="barbAddGold" class="btninc">+</a>
+                        <a id="barbSubtractGold" class="btndec">-</a>
+                    </div>
+                </div>
+
                 <div id="barbdisplay" class="activewindow"></div>
             </div>
 
-            <div class="char monk">
+            <div id="monkWhole" class="char monk">
                 <h1>Swift</h1>
                 <img id="monk" src="images/monknorm.png" alt="">
+
+                <div class="charInfo">
+                    <div id="monkAbilityInfo" class="class-ability">
+                        <img id="monkIcon" src="images/monk-on.png" class="icon" alt="">
+                        <img id="monkIcon1" src="images/monk-on.png" class="icon" alt="">
+                        <img id="monkIcon2" src="images/monk-on.png" class="icon" alt="">
+                        <img id="monkIcon3" src="images/monk-on.png" class="icon" alt="">
+                        <img id="monkIcon4" src="images/monk-on.png" class="icon" alt="">
+                    </div>
+
+                    <div id = "monkGoldInfo" class="goldInfo">
+                        <p id="monkGoldOut">Gold: 87</p>
+                        <a id="monkAddGold" class="btninc">+</a>
+                        <a id="monkSubtractGold" class="btndec">-</a>
+                    </div>
+                </div>
+
                 <div id="monkdisplay" class="activewindow"></div>
             </div>
 
-            <div class="char druid">
+            <div id="druidWhole" class="char druid">
                 <h1>Xexenia</h1>
                 <img id="druid" src="images/druidnorm.png" alt="">
+
+                <div class="charInfo">
+                    <div id="druidAbilityInfo" class="class-ability">
+                        <img id="druidIcon" src="images/druid-on.png" class="icon" alt="">
+                        <img id="druidIcon1" src="images/druid-on.png" class="icon" alt="">
+                    </div>
+
+                    <div id = "druidGoldInfo" class="goldInfo">
+                        <p id="druidGoldOut">Gold: 189</p>
+                        <a id="druidAddGold" class="btninc">+</a>
+                        <a id="druidSubtractGold" class="btndec">-</a>
+                    </div>
+                </div>
+
                 <div id="druiddisplay" class="activewindow"></div>
             </div>
 
         </div>
-    </section>   
+    </section>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
