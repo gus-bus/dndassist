@@ -42,7 +42,7 @@ p {
 }
 
 img {
-    width: 100%; /*Keep images in container*/
+    /*width: 100%; /*Keep images in container*/
     height: auto;
     display: block;
 }
@@ -54,7 +54,7 @@ img {
     padding: 16em 0;
     background-image:
         url(../heroimage.jpg),
-        radial-gradient(#444, #222);
+        radial-gradient(#555, #333);
     background-blend-mode: multiply;
     background-attachment: fixed;
 }
@@ -100,6 +100,21 @@ img {
     border-bottom: 2px #fff solid;
 }
 
+.goldInfo {
+    display: none;
+    padding-top: 50px;;
+}
+
+.goldInfo p {
+    display: inline;
+    line-height: 0;
+}
+
+.goldInfo a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /*Cards*/
 .cards {
     background-color: var(--primary-color);
@@ -123,6 +138,11 @@ img {
     text-align: center;
 }
 
+.char img {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
 /*Utilities*/
 .container { 
     max-width: 1800px;
@@ -139,7 +159,7 @@ img {
     height: 100%;
 }
 
-/*grid template cols is where you specify; below have specified that it will be split into 6 equal fractions
+/*grid-template-columns is specifices how the columns will be split/distributed; below have specified that it will be split into 6 equal fractions
 gap is used to separate the grid columns*/
 .grid {
     display: grid;
@@ -153,4 +173,90 @@ gap is used to separate the grid columns*/
 .subscript {
     font-style: italic;
     padding-left: 10px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-text, #fff);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    padding: .5em 1.25em;
+    background: var(--clr-accent, blue);
+    border-radius: .25em;
+}
+
+.class-ability img{
+    display: inline-block;
+}
+
+.btninc {
+    background: green;
+    padding: .5em 1.25em;
+    outline-style: none;
+}
+
+.btndec {
+    background: red;
+    padding: .5em 1.25em;
+}
+
+.abilityPage {
+    cursor: pointer;
+}
+
+.abilityPage p:hover {
+    color: gold;
+}
+
+.tooltip{
+    position: relative;
+}
+  
+.tooltip::before,
+.tooltip::after {
+    --scale: 0;
+    position: absolute;
+    top: -.25rem;
+    left: -35%;
+    transform: translateX(-62%) translateY(-100%) scale(var(--scale));
+    transition: 100ms transform;
+    transform-origin: bottom center;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    color: white;
+    padding: .5rem;
+    border-radius: .3rem;
+    text-align: left;
+    background: #666;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after{
+    --scale: 1;
+}
+
+#sorcIcon, 
+#sorcIcon1, 
+#sorcIcon2, 
+#sorcIcon3, 
+#sorcIcon4, 
+#rogueIcon, 
+#clericIcon, 
+#barbIcon, 
+#barbIcon1, 
+#barbIcon2, 
+#monkIcon, 
+#monkIcon1, 
+#monkIcon2, 
+#monkIcon3, 
+#monkIcon4, 
+#druidIcon, 
+#druidIcon1 {
+    max-width: 40px;
+    max-height: 40px;
+    margin-top: 10px;
 }
