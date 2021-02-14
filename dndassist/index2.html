@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD | The Glowkindle Six</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+    <header class="hero">
+          <h1 class="primary-title">The Glowkindle Six</h1>
+    </header>
+
+    <div class="navbar">
+        <div class="container flex">
+            <nav>
+                <ul>
+                    <li><a id="showstats">Stats</a></li>
+                    <li><a id="showequipment">Equipment</a></li>
+                    <li><a id="showskills">Skills</a></li>
+                    <li><a id="showabilities">Abilities</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>    
+
+    <section class="cards">
+        <div class="container grid">
+            <div class="char sorc">
+                <h1>Astrid</h1>
+                <img id="sorc" src="images/sorcnorm.png" alt="">
+                <h2>Sorcery points</h2>
+                <div class="class-ability">
+                    <img id="sorcIcon" src="images/sorc-off.png" class = icon alt="">
+                    <img id="sorcIcon1" src="images/sorc-off.png" class = icon alt="">
+                    <img id="sorcIcon2" src="images/sorc-off.png" class = icon alt="">
+                    <img id="sorcIcon3" src="images/sorc-off.png" class = icon alt="">
+                    <img id="sorcIcon4" src="images/sorc-off.png" class = icon alt="">
+                </div>
+                
+                <div id="sorcdisplay" class="activewindow"></div> 
+            </div>
+
+            <div class="char rogue">
+                <h1>Makaria</h1>
+                <img id="rogue" src="images/roguenorm.png" alt="">
+                <h2>Sneak attack</h2>
+                <div class="class-ability">
+                    <img id="rogueIcon" src="images/rogue-off.png" class="iconLarger" alt="">
+                </div>
+
+                <div id="roguedisplay" class="activewindow"></div>
+            </div>
+
+            <div class="char cleric">
+                <h1>Ovrin</h1>
+                <img id="cleric" src="images/clericnorm.png" alt="">
+                <h2>Channel divinity</h2>
+                <div class="class-ability">
+                    <img id="clericIcon" src="images/cleric-off.png" class="iconLarger" alt="">
+                </div>
+
+                <div id="clericdisplay" class="activewindow"></div>
+            </div>
+
+            <div class="char barb">
+                <h1>Regar</h1>
+                <img id="barb" src="images/barbnorm.png" alt="">
+                <h2>Rage</h2>
+                <div class="class-ability">
+                    <img id="barbIcon" src="images/barb-off.png" class="icon" alt="">
+                    <img id="barbIcon1" src="images/barb-off.png" class="icon" alt="">
+                    <img id="barbIcon2" src="images/barb-off.png" class="icon" alt="">
+                </div>
+                
+                <div id="barbdisplay" class="activewindow"></div>
+            </div>
+
+            <div class="char monk">
+                <h1>Swift</h1>
+                <img id="monk" src="images/monknorm.png" alt="">
+                <h2>Ki points</h2>
+                <div class="class-ability">
+                    <img id="monkIcon" src="images/monk-off.png" class="icon" alt="">
+                    <img id="monkIcon1" src="images/monk-off.png" class="icon" alt="">
+                    <img id="monkIcon2" src="images/monk-off.png" class="icon" alt="">
+                    <img id="monkIcon3" src="images/monk-off.png" class="icon" alt="">
+                    <img id="monkIcon4" src="images/monk-off.png" class="icon" alt="">
+                </div>
+                
+                <div id="monkdisplay" class="activewindow"></div>
+            </div>
+
+            <div class="char druid">
+                <h1>Xexenia</h1>
+                <img id="druid" src="images/druidnorm.png" alt="">
+                <h2>Wild shape</h2>
+                <div class="class-ability">
+                    <img id="druidIcon" src="images/druid-off.png" class="icon" alt="">
+                    <img id="druidIcon1" src="images/druid-off.png" class="icon" alt="">
+                </div>
+
+                <div id="druiddisplay" class="activewindow"></div>
+            </div>
+
+        </div>
+    </section>   
+    <script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>

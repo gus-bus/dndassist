@@ -1,0 +1,170 @@
+:root {
+    --primary-color: #313131;
+}
+
+
+/* Reset the box-sizing model https://css-tricks.com/box-sizing/*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*reset margins to 0 and set the main font family */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    /*background-color: var(--primary-color);*/
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    border-bottom: 2px white solid;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%; /*Keep images in container*/
+    height: auto;
+    display: block;
+}
+
+/*Hero Image*/
+.hero {
+    color: white;
+    text-align: center;
+    padding: 16em 0;
+    background-image:
+        url(../heroimage.jpg),
+        radial-gradient(#444, #222);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
+
+.primary-title {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 14rem;
+    font-size: clamp(3rem, 5vw + 1rem, 14.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    color: gold;
+}
+
+/*Navbar*/
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    height: 68px;
+    top: 0; /*Required for the sticky navbar; affects the vertical position of a positioned element*/
+    position: sticky;
+    z-index: 4;
+}
+
+.navbar .flex {
+    justify-content: center; /**/
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar li {
+    cursor: pointer;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar .a:hover {
+    border-bottom: 2px #fff solid;
+}
+
+/*Cards*/
+.cards {
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+    padding: 85px 0;
+    min-height: 1000px;
+}
+
+.cards h1 {
+    font-size: 40px;
+}
+
+.cards p{
+    margin: 20px 0;
+}
+
+.char h1{
+    font-size: 50px;
+    font-family: 'Rye', cursive;
+    text-align: center;
+}
+
+/*Utilities*/
+.container { 
+    max-width: 1800px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+/* flex-direction sets the main axis of the flex container; which affects direction of content spacing (e.g. justify-content: center); default is the x-axis*/
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*grid template cols is where you specify; below have specified that it will be split into 6 equal fractions
+gap is used to separate the grid columns*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    justify-content: center;
+    /*align-items: center; this is commented out, want to have the cards aligned from the top vertically*/
+    height: 100%;
+}
+
+.subscript {
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.icon{
+    max-width:40px;
+    max-height: 70px;
+}
+
+.iconLarger{
+    max-width:60px;
+    max-height: 70px;   
+}
+
+.class-ability img{
+    display: inline-block;
+}
