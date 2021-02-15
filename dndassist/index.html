@@ -23,7 +23,7 @@
                     <li><a id="showequipment">Equipment</a></li>
                     <li><a id="showskills">Skills</a></li>
                     <li><a id="showabilities">Abilities</a></li>
-                    <li><a id="showspells">Spells</a></li>
+                    <!--<li><a id="showspells">Spells</a></li>-->
                 </ul>
             </nav>
         </div>
@@ -46,8 +46,12 @@
 
                     <div id = "sorcGoldInfo" class="goldInfo">
                         <p id="sorcGoldOut">Gold: 203</p>
-                        <a id="sorcAddGold" class="btninc">+</a>
-                        <a id="sorcSubtractGold" class="btndec">-</a>
+                        <form name="myform" action="" method="GET">
+                            <input type="number" name="inputbox" value="">
+                            <input type="button" name="button" Value="+" onClick="sorcAddAmount(this.form)">
+                            <input type="button" name="button" Value="-" onClick="sorcSubtractAmount(this.form)">
+                            <input type="button" name="button" Value="=" onClick="sorcEqualAmount(this.form)">
+                        </form>
                     </div>
                 </div>
 
@@ -65,8 +69,12 @@
 
                     <div id = "rogueGoldInfo" class="goldInfo">
                         <p id="rogueGoldOut">Gold: 208</p>
-                        <a id="rogueAddGold" class="btninc">+</a>
-                        <a id="rogueSubtractGold" class="btndec">-</a>
+                        <form name="myform" action="" method="GET">
+                            <input type="number" name="inputbox" value="">
+                            <input type="button" name="button" Value="+" onClick="rogueAddAmount(this.form)">
+                            <input type="button" name="button" Value="-" onClick="rogueSubtractAmount(this.form)">
+                            <input type="button" name="button" Value="=" onClick="rogueEqualAmount(this.form)">
+                        </form>
                     </div>
                 </div>
 
@@ -84,8 +92,12 @@
 
                     <div id = "clericGoldInfo" class="goldInfo">
                         <p id="clericGoldOut">Gold: 286</p>
-                        <a id="clericAddGold" class="btninc">+</a>
-                        <a id="clericSubtractGold" class="btndec">-</a>
+                        <form name="myform" action="" method="GET">
+                            <input type="number" name="inputbox" value="">
+                            <input type="button" name="button" Value="+" onClick="clericAddAmount(this.form)">
+                            <input type="button" name="button" Value="-" onClick="clericSubtractAmount(this.form)">
+                            <input type="button" name="button" Value="=" onClick="clericEqualAmount(this.form)">
+                        </form>
                     </div>
                 </div>
 
@@ -105,8 +117,12 @@
 
                     <div id = "barbGoldInfo" class="goldInfo">
                         <p id="barbGoldOut">Gold: 160</p>
-                        <a id="barbAddGold" class="btninc">+</a>
-                        <a id="barbSubtractGold" class="btndec">-</a>
+                        <form name="myform" action="" method="GET">
+                            <input type="number" name="inputbox" value="">
+                            <input type="button" name="button" Value="+" onClick="barbAddAmount(this.form)">
+                            <input type="button" name="button" Value="-" onClick="barbSubtractAmount(this.form)">
+                            <input type="button" name="button" Value="=" onClick="barbEqualAmount(this.form)">
+                        </form>
                     </div>
                 </div>
 
@@ -128,8 +144,12 @@
 
                     <div id = "monkGoldInfo" class="goldInfo">
                         <p id="monkGoldOut">Gold: 87</p>
-                        <a id="monkAddGold" class="btninc">+</a>
-                        <a id="monkSubtractGold" class="btndec">-</a>
+                        <form name="myform" action="" method="GET">
+                            <input type="number" name="inputbox" value="">
+                            <input type="button" name="button" Value="+" onClick="monkAddAmount(this.form)">
+                            <input type="button" name="button" Value="-" onClick="monkSubtractAmount(this.form)">
+                            <input type="button" name="button" Value="=" onClick="monkEqualAmount(this.form)">
+                        </form>
                     </div>
                 </div>
 
@@ -148,8 +168,12 @@
 
                     <div id = "druidGoldInfo" class="goldInfo">
                         <p id="druidGoldOut">Gold: 189</p>
-                        <a id="druidAddGold" class="btninc">+</a>
-                        <a id="druidSubtractGold" class="btndec">-</a>
+                        <form name="myform" action="" method="GET">
+                            <input type="number" name="inputbox" value="">
+                            <input type="button" name="button" Value="+" onClick="druidAddAmount(this.form)">
+                            <input type="button" name="button" Value="-" onClick="druidSubtractAmount(this.form)">
+                            <input type="button" name="button" Value="=" onClick="druidEqualAmount(this.form)">
+                        </form>
                     </div>
                 </div>
 

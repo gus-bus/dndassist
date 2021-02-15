@@ -115,6 +115,18 @@ img {
     cursor: pointer;
 }
 
+.charInfo input[type='number']{
+    max-width: 160px;
+    height: 21px;
+}
+
+.charInfo input[type='button']{
+    min-width: 20px;
+    background-color: goldenrod;
+    color: #333;
+    font-weight: 100;
+}
+
 /*Cards*/
 .cards {
     background-color: var(--primary-color);
@@ -239,6 +251,35 @@ gap is used to separate the grid columns*/
     --scale: 1;
 }
 
+.tooltipAlt{
+    position: relative;
+}
+  
+.tooltipAlt::before,
+.tooltipAlt::after {
+    --scale: 0;
+    position: absolute;
+    top: -.25rem;
+    left: 45%;
+    transform: translateX(-62%) translateY(-100%) scale(var(--scale));
+    transition: 100ms transform;
+    transform-origin: bottom center;
+}
+
+.tooltipAlt::before {
+    content: attr(data-tooltipAlt);
+    color: white;
+    padding: .5rem;
+    border-radius: .3rem;
+    text-align: left;
+    background: #666;
+}
+
+.tooltipAlt:hover::before,
+.tooltipAlt:hover::after{
+    --scale: 1;
+}
+
 #sorcIcon, 
 #sorcIcon1, 
 #sorcIcon2, 
@@ -260,3 +301,59 @@ gap is used to separate the grid columns*/
     max-height: 40px;
     margin-top: 10px;
 }
+
+.sorcSpellWindow h2 {
+    margin: 0 auto ;
+}
+
+/* Customize the label (the container) */
+.hellothere {
+    display: block;
+    position: relative;
+    padding-top: -120px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .hellothere input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 25px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .hellothere:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .hellothere input:checked ~ .checkmark {
+    background-color: red;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  

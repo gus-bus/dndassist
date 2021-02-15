@@ -123,16 +123,16 @@ druidSkills = `<p>Strength Saving Throw: +1<br>Athletics: +1</p>
 
 //Abilities HTML
 
-sorcAbility = `<div class = "abilityPage"><p class="tooltip" data-tooltip="Hello">Sorcery</p>
-<p class="tooltip" data-tooltip="">Draonic Resilience</p>
-<p class="tooltip" data-tooltip="">Bronze Dragon Ancestor</p>
-<p class="tooltip" data-tooltip="">Font of Magic</p>
-<p class="tooltip" data-tooltip="">Meta Magic<p>
+sorcAbility = `<div class = "abilityPage"><p class="tooltipAlt" data-tooltipAlt="Sorcery Points are used to ">Sorcery</p>
+<p class="tooltipAlt" data-tooltipAlt="">Draonic Resilience</p> 
+<p class="tooltipAlt" data-tooltipAlt="">Bronze Dragon Ancestor</p>
+<p class="tooltipAlt" data-tooltipAlt="">Font of Magic</p>
+<p class="tooltipAlt" data-tooltipAlt="">Meta Magic<p>
 </div>
 `
-rogueAbility = `<div class = "abilityPage"><p class="tooltip" data-tooltip="">Sneak Attack</p>
-<p class="tooltip" data-tooltip="">Cunning Action</p>
-<p class="tooltip" data-tooltip="">Assassin</p>
+rogueAbility = `<div class = "abilityPage"><p class="tooltip" data-tooltip="Once per turn, can deal an extra 3d6 Sneak Attack Damage to one creature you hit with an attack if you have advantage on the attack roll. Must use a finesse or ranged weapon. Don't need advantage if another enemy of the target is within 5ft, the target isn't incapacitated and you don't have disadvantage on the attack roll">Sneak Attack</p>
+<p class="tooltip" data-tooltip="Can take a bonus action on each combat turn to Dash, Disengage or Hide">Cunning Action</p>
+<p class="tooltip" data-tooltip="You have advantage on attack rolls against any creature that hasn't taken a turn in combat yet. Any hit scored against a surprised creature is a critical hit. You are proficient with the disguise kit and poisoner's kit">Assassin</p>
 <p class="tooltip" data-tooltip="">Uncanny Dodge<p>
 <p class="tooltip" data-tooltip="">Hellish Rebuke</p>
 <p class="tooltip" data-tooltip="">Thaumaturgy</p>
@@ -163,14 +163,26 @@ monkAbility = `<div class = "abilityPage"><p class="tooltip" data-tooltip="Used 
 <p class="tooltip" data-tooltip="Cost 1 Ki - When you hit a creature with a melee attack, it must succeed a Constitution saving throw or be stunned until the end of your next turn">Stunning Strike</p>
 <p class="tooltip" data-tooltip="Speed increases by 10ft if not wearing armour or a shield">Unarmoured Movement</p>
 <p class="tooltip" data-tooltip="You can impose one of the following on a creature hit by your flurry of blows: It must succeed a Dexterity saving throw or be knocked prone; It must succeed a Strength saving throw or be pushed up to 15 ft away; It can't take any reactions until the end of your next turn">Way of the Open Hand - Open Hand Technique</p>
-<p class="tooltip" data-tooltip="">Slow Fall</p>
-<p class="tooltip" data-tooltip="">Extra Attack</p>
+<p class="tooltip" data-tooltip="Can use your reaction to reduce fall damage by 25">Slow Fall</p>
+<p class="tooltip" data-tooltip="You can attack twice instead of once for each Attack action">Extra Attack</p>
 <p class="tooltip" data-tooltip="Climbing speed of 20ft">Cat's Claws</p>
-<p class="tooltip" data-tooltip="">Darkvision</p>
-<p class="tooltip" data-tooltip="">Feline Agility</p>
+<p class="tooltip" data-tooltip="Can see in dim light as if it were bright light, can see in Darkness as if it were dim light">Darkvision</p>
+<p class="tooltip" data-tooltip="Can double your move speed in combat for one turn. Cannot be used again until you move 0ft in one turn.">Feline Agility</p>
 </div>
 `
 druidAbility = `<p>Sorry Phil, you're on your own!</p>`
+
+//Spells HTML
+sorcSpells = `<div class="sorcSpellWindow">
+<h2>Spell Slots</h2>
+<label class="hellothere">1st
+  <input type="checkbox" checked="checked">
+  <span class="checkmark"></span>
+</label>
+</form>
+</div>`
+
+clericSpells = ``
 
 //Inspiration Tracker
 
@@ -509,8 +521,6 @@ let druidGold = 189;
 //Gold Assignment
 let sorcGoldInfo = document.getElementById("sorcGoldInfo")
 let sorcGoldOutput = document.getElementById("sorcGoldOut")
-let sorcPlusGold = document.getElementById("sorcAddGold")
-let sorcMinusGold = document.getElementById("sorcSubtractGold")
 
 let rogueGoldInfo = document.getElementById("rogueGoldInfo")
 let rogueGoldOutput = document.getElementById("rogueGoldOut")
@@ -538,59 +548,202 @@ let druidPlusGold = document.getElementById("druidAddGold")
 let druidMinusGold = document.getElementById("druidSubtractGold")
 
 
-//Gold Modifier
-sorcPlusGold.onclick = () => {
-  sorcGold ++;
-  sorcGoldOutput.innerHTML = `<p>Gold: </p> `+ sorcGold
-}
-sorcMinusGold.onclick = () => {
-  sorcGold --;
-  sorcGoldOutput.innerHTML = `<p>Gold: </p> `+ sorcGold
-}
-
-roguePlusGold.onclick = () => {
-  rogueGold ++;
-  rogueGoldOutput.innerHTML = `<p>Gold: </p> `+ rogueGold
-}
-rogueMinusGold.onclick = () => {
-  rogueGold --;
-  rogueGoldOutput.innerHTML = `<p>Gold: </p> `+ rogueGold
+//Gold Functions
+function sorcAddAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToAdd = parseInt(form.inputbox.value);
+    sorcGold += amountToAdd;
+    sorcGoldOutput.innerHTML = `<p>Gold: </p> `+ sorcGold;
+    form.inputbox.value = "";
+  }
 }
 
-clericPlusGold.onclick = () => {
-  clericGold ++;
-  clericGoldOutput.innerHTML = `<p>Gold: </p> `+ clericGold
-}
-clericMinusGold.onclick = () => {
-  clericGold --;
-  clericGoldOutput.innerHTML = `<p>Gold: </p> `+ clericGold
-}
-
-barbPlusGold.onclick = () => {
-  barbGold ++;
-  barbGoldOutput.innerHTML = `<p>Gold: </p> `+ barbGold
-}
-barbMinusGold.onclick = () => {
-  barbGold --;
-  barbGoldOutput.innerHTML = `<p>Gold: </p> `+ barbGold
+function sorcSubtractAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToSubtract = parseInt(form.inputbox.value);
+    sorcGold -= amountToSubtract;
+    sorcGoldOutput.innerHTML = `<p>Gold: </p> `+ sorcGold;
+    form.inputbox.value = "";
+  }
 }
 
-monkPlusGold.onclick = () => {
-  monkGold ++;
-  monkGoldOutput.innerHTML = `<p>Gold: </p> `+ monkGold
-}
-monkMinusGold.onclick = () => {
-  monkGold --;
-  monkGoldOutput.innerHTML = `<p>Gold: </p> `+ monkGold
+function sorcEqualAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToEqual = parseInt(form.inputbox.value);
+    sorcGold = amountToEqual;
+    sorcGoldOutput.innerHTML = `<p>Gold: </p> `+ sorcGold;
+    form.inputbox.value = "";
+  }
 }
 
-druidPlusGold.onclick = () => {
-  druidGold ++;
-  druidGoldOutput.innerHTML = `<p>Gold: </p> `+ druidGold
+function rogueAddAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToAdd = parseInt(form.inputbox.value);
+    rogueGold += amountToAdd;
+    rogueGoldOutput.innerHTML = `<p>Gold: </p> `+ rogueGold;
+    form.inputbox.value = "";
+  }
 }
-druidMinusGold.onclick = () => {
-  druidGold --;
-  druidGoldOutput.innerHTML = `<p>Gold: </p> `+ druidGold
+
+function rogueSubtractAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToSubtract = parseInt(form.inputbox.value);
+    rogueGold -= amountToSubtract;
+    rogueGoldOutput.innerHTML = `<p>Gold: </p> `+ rogueGold;
+    form.inputbox.value = "";
+  }
+}
+
+function rogueEqualAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToEqual = parseInt(form.inputbox.value);
+    rogueGold = amountToEqual;
+    rogueGoldOutput.innerHTML = `<p>Gold: </p> `+ rogueGold;
+    form.inputbox.value = "";
+  }
+}
+function clericAddAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToAdd = parseInt(form.inputbox.value);
+    clericGold += amountToAdd;
+    clericGoldOutput.innerHTML = `<p>Gold: </p> `+ clericGold;
+    form.inputbox.value = "";
+  }
+}
+
+function clericSubtractAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToSubtract = parseInt(form.inputbox.value);
+    clericGold -= amountToSubtract;
+    clericGoldOutput.innerHTML = `<p>Gold: </p> `+ clericGold;
+    form.inputbox.value = "";
+  }
+}
+
+function clericEqualAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToEqual = parseInt(form.inputbox.value);
+    clericGold = amountToEqual;
+    clericGoldOutput.innerHTML = `<p>Gold: </p> `+ clericGold;
+    form.inputbox.value = "";
+  }
+}
+
+function barbAddAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToAdd = parseInt(form.inputbox.value);
+    barbGold += amountToAdd;
+    barbGoldOutput.innerHTML = `<p>Gold: </p> `+ barbGold;
+    form.inputbox.value = "";
+  }
+}
+
+function barbSubtractAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToSubtract = parseInt(form.inputbox.value);
+    barbGold -= amountToSubtract;
+    barbGoldOutput.innerHTML = `<p>Gold: </p> `+ barbGold;
+    form.inputbox.value = "";
+  }
+}
+
+function barbEqualAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToEqual = parseInt(form.inputbox.value);
+    barbGold = amountToEqual;
+    barbGoldOutput.innerHTML = `<p>Gold: </p> `+ barbGold;
+    form.inputbox.value = "";
+  }
+}
+
+function monkAddAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToAdd = parseInt(form.inputbox.value);
+    monkGold += amountToAdd;
+    monkGoldOutput.innerHTML = `<p>Gold: </p> `+ monkGold;
+    form.inputbox.value = "";
+  }
+}
+
+function monkSubtractAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToSubtract = parseInt(form.inputbox.value);
+    monkGold -= amountToSubtract;
+    monkGoldOutput.innerHTML = `<p>Gold: </p> `+ monkGold;
+    form.inputbox.value = "";
+  }
+}
+
+function monkEqualAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToEqual = parseInt(form.inputbox.value);
+    monkGold = amountToEqual;
+    monkGoldOutput.innerHTML = `<p>Gold: </p> `+ monkGold;
+    form.inputbox.value = "";
+  }
+}
+
+function druidAddAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToAdd = parseInt(form.inputbox.value);
+    druidGold += amountToAdd;
+    druidGoldOutput.innerHTML = `<p>Gold: </p> `+ druidGold;
+    form.inputbox.value = "";
+  }
+}
+
+function druidSubtractAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToSubtract = parseInt(form.inputbox.value);
+    druidGold -= amountToSubtract;
+    druidGoldOutput.innerHTML = `<p>Gold: </p> `+ druidGold;
+    form.inputbox.value = "";
+  }
+}
+
+function druidEqualAmount (form) {
+  if (form.inputbox.value == "") {
+    return false
+  } else {
+    var amountToEqual = parseInt(form.inputbox.value);
+    druidGold = amountToEqual;
+    druidGoldOutput.innerHTML = `<p>Gold: </p> `+ druidGold;
+    form.inputbox.value = "";
+  }
 }
 
 //Navbar Assignment
@@ -747,6 +900,8 @@ abilitiesButton.onclick = () => {
 };
 
 spellsButton.onclick = () => {
+  sorcDisplay.innerHTML = sorcSpells;
+
   rogueAll.style.display = "none"
   barbAll.style.display = "none"
   monkAll.style.display = "none"
